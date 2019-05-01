@@ -39,6 +39,7 @@ function total() {
 }
 
 function removeFromCart(item) {
+  ret
   
   // write your code here
 }
