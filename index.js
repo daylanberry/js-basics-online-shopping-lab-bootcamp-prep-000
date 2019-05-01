@@ -10,15 +10,32 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- // write your code here
+  cart.push({itemName: item, itemPrice: Math.floor(Math.random() * (100 - 1)) + 1});
+  return `${item} has been added to your cart.`
 }
 
 function viewCart() {
-  // write your code here
+  var newArray = [];
+  
+  if (cart.length === 0){
+    return "Your shopping cart is empty."
+  }
+  
+  for (var i = 0; i<cart.length; i++){
+    if (i === cart.length-1 && cart.length > 1){
+      newArray.push(` and ${cart[i].itemName} at $${cart[i].itemPrice}`)
+    } else{
+      newArray.push(` ${cart[i].itemName} at $${cart[i].itemPrice}`)
+    }
+  }
+  return `In your cart, you have${newArray}.`
 }
 
 function total() {
-  // write your code here
+  return cart.reduce(function(total, itemObj){
+    return total + itemObj.itemPrice
+  }, 0)
+  
 }
 
 function removeFromCart(item) {
