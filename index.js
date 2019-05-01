@@ -39,9 +39,14 @@ function total() {
 }
 
 function removeFromCart(item) {
-  ret
   
-  // write your code here
+  for (var i = 0; i<cart.length; i++){
+    if (cart[i].hasOwnProperty(item)){
+      delete cart[i]
+    });
+    return cart;
+  }
+  return "Sorry, we don't have a credit card on file for you."
 }
 
 function placeOrder(cardNumber) {
